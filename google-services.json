@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "104528777346",
+    "project_id": "location-app2",
+    "storage_bucket": "location-app2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104528777346:android:b3220dbdb818c36971649b",
+        "android_client_info": {
+          "package_name": "com.Locationapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQqUhEc6CuOz2PBzszokC6Ii-_Md6qjBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
