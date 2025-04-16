@@ -4,7 +4,7 @@ import { LocationsContext } from "../context/LocationsContext";
 import { auth } from "../firebaseConfig";
 import { getFirestore, collection, query, getDocs } from "firebase/firestore";
 import Layout from "../components/Layout";
-import { Ionicons } from "@expo/vector-icons"; // Import icons
+import { Ionicons } from "@expo/vector-icons"; 
 
 const LocationsScreen = ({ navigation }) => {
   const { locations, setLocations } = useContext(LocationsContext);
@@ -64,7 +64,7 @@ const LocationsScreen = ({ navigation }) => {
                 {/* Right Side: Clickable Map Image */}
                 <TouchableOpacity onPress={() => navigation.navigate("Map", { location: item })}>
                   <Image
-                    source={require("../assets/marker.png")} // Replace with your own image
+                    source={require("../assets/marker.png")} 
                     style={styles.mapIcon}
                   />
                 </TouchableOpacity>
@@ -90,20 +90,20 @@ const styles = StyleSheet.create({
   locationItem: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 15, // Increased padding
+    padding: 15, 
     borderBottomWidth: 1,
     justifyContent: "space-between",
-    backgroundColor: "#f9f9f9", // Optional: Light background
-    borderRadius: 10, // Optional: Rounded corners
-    width: "100%", // Take full width
-    marginBottom: 10, // Spacing between items
+    backgroundColor: "#f9f9f9",
+    borderRadius: 10, 
+    width: "100%", 
+    marginBottom: 10, 
   },
   textContainer: {
     flex: 1,
-    paddingRight: 10, // Prevents text from touching the image
+    paddingRight: 10, 
   },
   locationName: {
-    fontSize: 20, // Slightly larger font
+    fontSize: 20, 
     fontWeight: "bold",
   },
   starContainer: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   mapIcon: {
-    width: 50, // Slightly larger size
+    width: 50, 
     height: 50,
   },
 });

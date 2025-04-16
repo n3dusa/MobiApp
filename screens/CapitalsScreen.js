@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderBottomWidth: 1,
     paddingVertical: 10,
-    paddingHorizontal: 1, // Ensures content fills the width
-    width: "100%", // Makes sure it spans the entire screen width
-    backgroundColor: "#f9f9f9", // Optional: light background to separate items
+    paddingHorizontal: 1, 
+    width: "100%", 
+    backgroundColor: "#f9f9f9", 
   },
   textContainer: {
-    flex: 1, // Ensures text takes available space
+    flex: 1, 
   },
   countryName: {
     fontSize: 18,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     color: "#555",
   },
   flag: {
-    width: 60, // Adjust flag size
+    width: 60, 
     height: 40,
     borderRadius: 3,
   },

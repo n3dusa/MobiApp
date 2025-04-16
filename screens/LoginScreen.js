@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Alert, Image, StyleSheet, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebaseConfig"; // Import Firebase auth
+import { auth } from "../firebaseConfig"; 
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -85,15 +85,15 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   loginButton: {
-    backgroundColor: "#007BFF",  // Blue background
-    paddingVertical: 12,         // Adjust height
-    paddingHorizontal: 125,       // Adjust width
+    backgroundColor: "#007BFF", 
+    paddingVertical: 12,         
+    paddingHorizontal: 125,       
     borderRadius: 10,
     marginTop: 20,
   },
   loginButtonText: {
     color: "white",
-    fontSize: 18,   // Change text size
+    fontSize: 18,   
     fontWeight: "bold",
     textAlign: "center",
   },

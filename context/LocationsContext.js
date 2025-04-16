@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { collection, query, onSnapshot } from "firebase/firestore";
-import { db } from "../firebaseConfig"; // Ensure db is correctly imported
-import { auth } from "../firebaseConfig"; // Ensure auth is correctly imported
+import { db } from "../firebaseConfig"; 
+import { auth } from "../firebaseConfig"; 
 
 export const LocationsContext = createContext();
 
@@ -15,7 +15,7 @@ export const LocationsProvider = ({ children }) => {
 
       // Fetch locations from the user's specific subcollection
       const locationsRef = collection(db, "users", user.uid, "locations");
-      const q = query(locationsRef); // Use the collection reference here
+      const q = query(locationsRef); 
 
       const unsubscribe = onSnapshot(q, (snapshot) => {
         const locationsData = snapshot.docs.map((doc) => ({

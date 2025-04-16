@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, ActivityIndicator, TouchableOpacity } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import { useRoute } from "@react-navigation/native"; // Import useRoute hook
-import { Ionicons } from "@expo/vector-icons"; // Optional: for an icon in the back button
+import { useRoute } from "@react-navigation/native"; 
+import { Ionicons } from "@expo/vector-icons"; 
 
 const MapScreen = ({ navigation }) => {
-  const route = useRoute(); // Get the route object
-  const location = route.params?.location || null; // Extract location, if provided
+  const route = useRoute(); 
+  const location = route.params?.location || null; 
 
   const [loading, setLoading] = useState(false);
 

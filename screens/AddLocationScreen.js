@@ -6,14 +6,14 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import Layout from "../components/Layout";
 import { LocationsContext } from "../context/LocationsContext";
-import { Ionicons } from "@expo/vector-icons"; // Import icons
+import { Ionicons } from "@expo/vector-icons"; 
 
-const GEOCODING_API_KEY = "374db153d2244a2eb6793afafc47eaa6"; // Replace with your API key
+const GEOCODING_API_KEY = "374db153d2244a2eb6793afafc47eaa6";
 
 const AddLocationScreen = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [rating, setRating] = useState(0); // Default 0 stars
+  const [rating, setRating] = useState(0); 
   const navigation = useNavigation();
   const db = getFirestore();
   const { setLocations } = useContext(LocationsContext);
@@ -42,7 +42,7 @@ const AddLocationScreen = () => {
       const docRef = await addDoc(collection(db, "users", user.uid, "locations"), {
         name,
         description,
-        rating, // Store selected rating
+        rating, 
         latitude: lat,
         longitude: lng,
         createdAt: new Date(),

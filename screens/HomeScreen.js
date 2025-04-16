@@ -1,7 +1,7 @@
 // LocationsScreen.js
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import Layout from "../components/Layout"; // Import the Layout component
+import Layout from "../components/Layout"; 
 
 const LocationsScreen = ({ navigation }) => {
   return (

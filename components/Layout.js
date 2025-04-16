@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useRoute } from "@react-navigation/native"; // Import useRoute to get current screen
+import { useRoute } from "@react-navigation/native"; 
 
 const Layout = ({ navigation, children }) => {
-  const route = useRoute(); // Get the current route name
+  const route = useRoute(); 
 
   const handleLogout = async () => {
     await AsyncStorage.removeItem("userToken");
