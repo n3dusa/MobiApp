@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, FlatList, StyleSheet, Image } from "react-native";
+import { View, Text, TextInput, Button, FlatList, Image, StyleSheet } from "react-native";
 import axios from "axios";
 import Layout from "../components/Layout";
 
@@ -8,18 +8,31 @@ const CapitalsScreen = ({ navigation }) => {
   const [countries, setCountries] = useState([]);
 
   const fetchCountryData = async () => {
+    if (!search.trim()) return;
     try {
-      const response = await axios.get(`https://restcountries.com/v3.1/name/${search}`);
-      setCountries(response.data);
-    } catch (error) {
-      console.error(error);
+      // Try country-name
+      const { data } = await axios.get(
+        `https://restcountries.com/v3.1/name/${encodeURIComponent(search)}`
+      );
+      setCountries(data);
+    } catch {
+      try {
+        // Fallback to capital-city
+        const { data } = await axios.get(
+          `https://restcountries.com/v3.1/capital/${encodeURIComponent(search)}`
+        );
+        setCountries(data);
+      } catch (err) {
+        console.error("No results:", err);
+        setCountries([]);
+      }
     }
   };
 
   return (
     <Layout navigation={navigation}>
       <View style={styles.container}>
-        <Text style={styles.title}>Search for a Country</Text>
+        <Text style={styles.title}>Search by Country or Capital</Text>
         <TextInput
           value={search}
           onChangeText={setSearch}
@@ -27,7 +40,7 @@ const CapitalsScreen = ({ navigation }) => {
           style={styles.input}
         />
         <Button title="Search" onPress={fetchCountryData} />
-        
+
         <FlatList
           data={countries}
           keyExtractor={(item) => item.cca3}
@@ -35,7 +48,9 @@ const CapitalsScreen = ({ navigation }) => {
             <View style={styles.resultContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.countryName}>{item.name.common}</Text>
-                <Text style={styles.capital}>Capital: {item.capital ? item.capital[0] : "N/A"}</Text>
+                <Text style={styles.capital}>
+                  Capital: {item.capital ? item.capital[0] : "N/A"}
+                </Text>
               </View>
               <Image source={{ uri: item.flags.png }} style={styles.flag} />
             </View>
